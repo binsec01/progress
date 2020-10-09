@@ -31,7 +31,7 @@ read -p "input goes here:" massage
 $masage 2> /dev/null `
 
 
-# RESOUCES:
+# RESOURCES:
 
 learn about <a herf="https://lolbas-project.github.io/">LOLBAS </a>. Which is similer to <a herf="https://gtfobins.github.io/">  GTFOBins </a>
 
@@ -55,10 +55,9 @@ make sure checked Bheem project over github.
 <br>
 
 
-<h1> Day02 </h1>
+``` Day02 ```
 ------------------
 Abu Syed Rahat , Oct 09 2020
-
 ------------------
 
 # PrivEsc
