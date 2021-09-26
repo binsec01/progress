@@ -11,5 +11,5 @@ Sept 19, 2021
     - profile picture
     - Display Name
     - Discription Name
-    - Buy Premium Optoin
+    - Buy Premium Option ( under development )
     
