@@ -48,7 +48,8 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 # Web Reconnaissance
 I added writer.htb in `/etc/hosts` file with associated IP address. I visited `http://writer.htb` and it returns this:
-![[writer-web_root.png]]
+
+![web_root](https://github.com/binsec01/progress/raw/main/screenshots/writer-web_root.png)
 ###### Content Discovery:
 I used `ffuf`  for fuzzing web contents.
 ```bash
