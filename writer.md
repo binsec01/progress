@@ -85,7 +85,8 @@ administrative          [Status: 200, Size: 1443, Words: 185, Lines: 35]
 :: Progress: [4685/4685] :: Job [1/1] :: 388 req/sec :: Duration: [0:00:11] :: Errors: 0 ::
 ```
 
-![[writer-admin_login_page.png]]
+![admin_login_page](screenshots/writer-admin_login_page.png?raw=true)
+
 <center>writer.htb/administrative</center>
 
 # Exploitation
