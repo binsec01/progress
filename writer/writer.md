@@ -48,7 +48,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 # Web Reconnaissance
 I added writer.htb in `/etc/hosts` file with associated IP address. I visited `http://writer.htb` and it returns this:
-![[writer-web_root.png]]
+![](writer-web_root.png)
 ###### Content Discovery:
 I used `ffuf`  for fuzzing web contents.
 ```bash
@@ -84,8 +84,8 @@ administrative          [Status: 200, Size: 1443, Words: 185, Lines: 35]
 :: Progress: [4685/4685] :: Job [1/1] :: 388 req/sec :: Duration: [0:00:11] :: Errors: 0 ::
 ```
 
-![[writer-admin_login_page.png]]
-<center>writer.htb/administrative</center>
+![admin_login_page](screenshots/writer-admin_login_page.png)
+<p align="center"> writer.htb/administrative</p>
 
 # Exploitation
 I tried some random username password combination. but did't work! Then I put SQLi Payload and bypassed Admin Login.
@@ -93,28 +93,28 @@ I tried some random username password combination. but did't work! Then I put SQ
 username = admin' -- -
 password = admin' -- -
 ```
-![[writer-SQLi.png]]
+![sqi_payload](screenshots/writer-SQLi.png)
 
 Admin Dashboard Screenshot:
 
-![[writer-admin_panel_bypass_with_SQLi.png]]
+![admin_dashboard](screenshots/writer-admin_panel_bypass_with_SQLi.png)
 
 -------------
  I send admin login request to burp for harvesting database info.  There was total 6 columns and 2nd column executes our SQL Query.
  
- ![[writer-vulnerable_column.png]]
+ ![vulnerable_column](screenshots/writer-vulnerable_column.png)
  
  
  Dumped Databases, but found nothing interesting there. then move forward for server side issue.
  
 I was able to read local file using SQL `load_file()` function. 
- ![[writer-local_file_read-0.png]]
+ ![/etc/passwd](screenshots/writer-local_file_read-0.png)
  
  After successfully reading `/etc/passwd`.  
  
  My next movement was reading Apache2 Configuration FIle. As I know from `nmap` scan,  target machine using apache2. 
  
- ![[writer-apache2_config_file_read.png]]
+ ![000-default.conf](screenshots/writer-apache2_config_file_read.png)
  
 `/etc/apache2/sites-enabled/000-default.conf`
 
@@ -178,7 +178,7 @@ I was sure about the site was not made with php.  In apache2 configuration file 
 
 From there it was sure , website running with python based application under Apache.
 
-without delay, I read `__init___.py` from `/var/www/writer.htb/writer/` .
+without delay, I read `__init__.py` from `/var/www/writer.htb/writer/` .
 
 ``` bash
 curl -X POST http://writer.htb/administrative --data "uname=admin'+and+0+union+select+1,load_file('/var/www/writer.htb/writer/__init__.py'),3,4,5,6--+-&password=admin"
