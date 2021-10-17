@@ -77,7 +77,7 @@ pets                    [Status: 200, Size: 510, Words: 20, Lines: 21]
 
 Add Pets Name Function
 
-![add_pets_functionality](add_pets.png)
+![add_pets_functionality](screenshots/add_pets.png)
 
 # Content Discovery
 ```bash
