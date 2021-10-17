@@ -37,9 +37,9 @@ Service detection performed. Please report any incorrect results at https://nmap
 ```
 
 # Web Recon
-![[web_root.png]]
+![home_page_header](screenshots/web_root.png)
 
-![[footer_web.png]]
+![home_page_footer](screenshots/footer_web.png)
 
 # Sub Domain Enumeration
 ```bash
@@ -73,11 +73,11 @@ pets                    [Status: 200, Size: 510, Words: 20, Lines: 21]
 ```
 
 
-![[pets_webroot.png]]
+![pets_doms_home_page](screenshots/pets_webroot.png)
 
 Add Pets Name Function
 
-![[add_pets.png]]
+![add_pets_functionality](add_pets.png)
 
 # Content Discovery
 ```bash
@@ -337,7 +337,7 @@ Nmap done: 1 IP address (1 host up) scanned in 56.36 seconds
 
 ```
 
-![[code_review.png]]
+![diff_dev_main](screenshots/code_review.png)
 ```bash
 $ ssh catherine@localhost -p 8443
 ```
